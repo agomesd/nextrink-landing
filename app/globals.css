@@ -2,32 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(222.2 84% 4.9%);
+
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(222.2 84% 4.9%);
+
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(222.2 84% 4.9%);
+
+    --primary: hsl(222.2 47.4% 11.2%);
+    --primary-foreground: hsl(210 40% 98%);
+
+    --secondary: hsl(210 40% 96.1%);
+    --secondary-foreground: hsl(222.2 47.4% 11.2%);
+
+    --muted: hsl(210 40% 96.1%);
+    --muted-foreground: hsl(215.4 16.3% 46.9%);
+
+    --accent: #2dd4bf;
+    --accent-foreground: #ffffff;
+
+    --success: #20fc8f;
+    --success-foreground: hsl(222.2 47.4% 11.2%);
+
+    --warning: #ffca3a;
+    --warning-foreground: hsl(222.2 47.4% 11.2%);
+
+    --destructive: #e11d48;
+    --destructive-foreground: hsl(210 40% 98%);
+
+    --border: hsl(214.3 31.8% 91.4%);
+    --input: hsl(214.3 31.8% 91.4%);
+    --ring: #2dd4bf;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: hsl(222.2 84% 4.9%);
+    --foreground: hsl(210 40% 98%);
+
+    --card: hsl(222.2 84% 4.9%);
+    --card-foreground: hsl(210 40% 98%);
+
+    --popover: hsl(222.2 84% 4.9%);
+    --popover-foreground: hsl(210 40% 98%);
+
+    --primary: hsl(210 40% 98%);
+    --primary-foreground: hsl(222.2 47.4% 11.2%);
+
+    --secondary: hsl(217.2 32.6% 17.5%);
+    --secondary-foreground: hsl(210 40% 98%);
+
+    --muted: hsl(217.2 32.6% 17.5%);
+    --muted-foreground: hsl(215 20.2% 65.1%);
+
+    --accent: #2dd4bf;
+    --accent-foreground: hsl(222.2 84% 4.9%);
+
+    --success: #20fc8f;
+    --success-foreground: hsl(222.2 84% 4.9%);
+
+    --warning: #ffca3a;
+    --warning-foreground: hsl(222.2 84% 4.9%);
+
+    --destructive: #e11d48;
+    --destructive-foreground: hsl(210 40% 98%);
+
+    --border: hsl(217.2 32.6% 17.5%);
+    --input: hsl(217.2 32.6% 17.5%);
+    --ring: hsl(212.7 26.8% 83.9%);
+
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
